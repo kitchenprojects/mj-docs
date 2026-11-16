@@ -230,6 +230,9 @@ Dokumen ini menyajikan panduan referensi lengkap untuk seluruh endpoint REST API
 }
 ```
 - **Nilai Status Valid**: `Pending`, `Confirmed`, `Processing`, `Out for Delivery`, `Delivered`, `Cancelled`.
+- **Aturan Transisi & Terminal States**:
+  - Dilarang merubah pesanan dari status terminal (`Delivered` dan `Cancelled`). Jika dicoba, sistem mengembalikan **HTTP 400 Bad Request**.
+  - Detail matriks pengujian transisi status dapat dilihat di [testing-evaluation.md](file:///d:/mj-kitchen/mj-docs/testing/testing-evaluation.md).
 
 ### 3.6. Memperbarui Status Pembayaran (Client Callback)
 `PUT /api/orders/:id/payment`
@@ -348,6 +351,17 @@ Dokumen ini menyajikan panduan referensi lengkap untuk seluruh endpoint REST API
   }
 }
 ```
+- **Validasi Batas Radius (Maksimal 50 km)**:
+  - Jika alamat tujuan berada di luar radius $50.0\text{ km}$, sistem mengembalikan **HTTP 400 Bad Request**:
+  ```json
+  {
+    "message": "Lokasi pengiriman berada di luar radius jangkauan Dapur Nekti (Maksimal 50 km). Jarak Anda: 52.4 km.",
+    "success": false,
+    "distance": { "text": "52.4 km", "value": 52400, "km": 52.4 },
+    "maxRadiusKm": 50
+  }
+  ```
+  - Hasil pengujian batas (*Boundary Value Analysis*) untuk $R - \epsilon$, $R$, dan $R + \epsilon$ dapat dilihat di [testing-evaluation.md](file:///d:/mj-kitchen/mj-docs/testing/testing-evaluation.md).
 
 ### 6.2. Tarif Pengiriman Tier (Fallback)
 `GET /api/shipping/tiers`

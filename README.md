@@ -18,7 +18,8 @@ Dokumentasi ini dibagi menjadi beberapa bagian utama:
 | 6 | **Frontend Architecture & Design** | Desain antarmuka (Design System & Color Palette), konfigurasi Tailwind CSS, Vite + React 19, sistem routing & Route Guards. | [architecture-and-design.md](file:///d:/mj-kitchen/mj-docs/frontend/architecture-and-design.md) |
 | 7 | **Frontend State & Services** | Manajemen state global menggunakan Zustand (`authStore`, `cartStore` dengan local persistence), integrasi Axios Interceptors & Supabase JS client. | [state-management.md](file:///d:/mj-kitchen/mj-docs/frontend/state-management.md) |
 | 8 | **Frontend Pages & Components** | Dokumentasi interaksi halaman pelanggan (Menu, Cart, Tracking, Receipt) serta modul panel Admin (Dashboard, Menu, Order, Report Excel). | [pages-and-components.md](file:///d:/mj-kitchen/mj-docs/frontend/pages-and-components.md) |
-| 9 | **DevOps & Cloud Deployment** | Panduan deployment otomatis via GitHub Actions ke Google Cloud Run, konfigurasi hosting Vercel, dan kamus variabel lingkungan (`.env`). | [devops-guide.md](file:///d:/mj-kitchen/mj-docs/deployment-and-devops/devops-guide.md) |
+| 9 | **DevOps & Cloud Deployment** | Panduan deployment otomatis via GitHub Actions ke Google Cloud Run, konfigurasi hosting Vercel, dan kamus variabel lingkungan (`.env`). | [devops-guide.md](file:///d:/mj-kitchen/mj-docs/devops/devops-guide.md) |
+| 10 | **Testing & System Evaluation** | Laporan evaluasi pengujian komprehensif: Skenario Midtrans (Success, Pending, Failed), pengujian batas transisi status pengiriman (*State Machine*), dan analisis nilai batas radius pengiriman (*Boundary Value Analysis*). | [testing-evaluation.md](file:///d:/mj-kitchen/mj-docs/testing/testing-evaluation.md) |
 
 ---
 
